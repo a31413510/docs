@@ -18,13 +18,13 @@
 
 ```bash
 # 拉取镜像
-docker pull ccr-2vdh3abv-pub.cnc.bj.baidubce.com/device/paddle-dcu:dtk23.10.1-kylinv10-gcc73-py310
+docker pull ccr-2vdh3abv-pub.cnc.bj.baidubce.com/paddlepaddle/paddle-dcu:dtk24.04.1-kylinv10-gcc82
 
 # 参考如下命令，启动容器
 docker run -it --name paddle-dcu-dev -v `pwd`:/work \
   -w=/work --shm-size=128G --network=host --privileged  \
   --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
-  ccr-2vdh3abv-pub.cnc.bj.baidubce.com/device/paddle-dcu:dtk23.10.1-kylinv10-gcc73-py310 /bin/bash
+  ccr-2vdh3abv-pub.cnc.bj.baidubce.com/paddlepaddle/paddle-dcu:dtk24.04.1-kylinv10-gcc82 /bin/bash
 
 # 检查容器内是否可以正常识别海光 DCU 设备
 rocm-smi
